@@ -1,0 +1,57 @@
+﻿<Window x:Class="MagicTheme.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:wpfui="clr-namespace:WPFUI.Controls;assembly=WPFUI"
+        xmlns:vm="clr-namespace:MagicTheme.ViewModels"
+        xmlns:local="clr-namespace:MagicTheme"
+        mc:Ignorable="d"
+        Style="{StaticResource UiWindowRounded}"
+        WindowStartupLocation="CenterScreen"
+        Title="MagicTheme" Height="450" Width="800">
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <wpfui:TitleBar ApplicationNavigation="True" Title="MagicTheme"/>
+        <StackPanel Grid.Row="1">
+            
+            <TextBlock Text="DashBoard" FontSize="32px" Margin="20"/>
+            <Grid Grid.Column="1" Margin="30 0 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <wpfui:Icon FontSize="19" Glyph="PaintBrush20" />
+                <StackPanel
+                    Grid.Column="1"
+                    Margin="12,0,0,0"
+                    HorizontalAlignment="Left"> 
+                    
+                    <TextBlock
+                        Margin="0,0,0,4"
+                        FontSize="18px"
+                        FontWeight="Medium"
+                        Text="Status :" />
+                    <TextBlock
+                        FontSize="14"
+                        Text="Default"
+                        Margin="40 0 0 0"/>
+                </StackPanel>
+                    <StackPanel Grid.Column="2" >
+                        <wpfui:Icon Glyph="Check20" FontFamily="19"/>
+                    <TextBlock Text="Avibility:" FontSize="18px" FontWeight="Medium" />
+                    <wpfui:Icon Glyph="Person20"/>
+                </StackPanel>
+
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>
